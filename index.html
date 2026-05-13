@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sindhu — Biryani, bagundi.</title>
+  <meta name="description" content="Handcrafted dum biryani, slow-cooked over coals and sealed with dough — delivered hot to Mandadam village and VIT-AP hostels." />
+
+  <!-- Favicon (uses your logo) -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/logo.svg" />
+
+  <!-- OG / social -->
+  <meta property="og:title" content="Sindhu — Biryani, bagundi." />
+  <meta property="og:description" content="Slow-cooked dum biryani, delivered to Mandadam & VIT-AP hostels." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- React + Babel via CDN (no build step) -->
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    // ============== CONFIG ==============
+    const WHATSAPP_NUMBER = "917396018423"; // +91 73960 18423
+    const INSTAGRAM_URL  = "https://instagram.com/sindhu.mandadam";
+    const PHONE_TEL      = "+917396018423";
+
+    // ============== HEADER ==============
+    function Header({ onOrder }) {
+      return (
+        <header className="site-header">
+          <div className="container">
+            <div className="row">
+              <img src="assets/logo.svg" alt="Sindhu" className="logo" />
+              <nav className="nav">
+                <a href="#menu">Menu</a>
+                <a href="#story">Our Story</a>
+                <a href="#delivery">Delivery</a>
+                <button className="btn solid sm" onClick={onOrder}>Order Now</button>
+              </nav>
+            </div>
+          </div>
+        </header>
+      );
+    }
+
+    // ============== HERO ==============
+    function Hero({ onOrder, onMenu }) {
+      return (
+        <section className="hero" data-screen-label="Hero">
+          <svg className="corner-pot" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M70 30 q-6 -10 4 -20 q10 -10 -2 -22" />
+            <path d="M100 30 q-6 -12 4 -22 q8 -10 -2 -20" />
+            <path d="M130 30 q-6 -10 4 -20 q10 -10 -2 -22" />
+            <circle cx="100" cy="60" r="6" />
+            <line x1="100" y1="66" x2="100" y2="78" />
+            <path d="M50 78 q50 -16 100 0" />
+            <line x1="48" y1="78" x2="152" y2="78" />
+            <path d="M52 80 q-2 50 14 80 q34 14 68 0 q16 -30 14 -80" />
+            <path d="M50 92 q-12 4 -10 18" />
+            <path d="M150 92 q12 4 10 18" />
+            <line x1="62" y1="120" x2="138" y2="120" strokeDasharray="4 6" />
+          </svg>
+
+          <img className="sticker" src="assets/stickers/sticker-hostel-fav.svg" alt="" />
+
+          <div className="container">
+            <div style={{ paddingTop: 64, paddingBottom: 24, maxWidth: 920 }}>
+              <span className="chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s-7-8-7-13a7 7 0 1 1 14 0c0 5-7 13-7 13z" />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                Delivering to Mandadam &amp; VIT-AP only
+              </span>
+              <span className="telugu-tag">సింధు</span>
+              <h1>
+                Biryani,<br /><span className="accent">bagundi.</span>
+              </h1>
+              <p className="sub">
+                Handcrafted dum biryani, slow-cooked over coals and sealed with dough —
+                delivered hot to Mandadam village and VIT-AP hostels.
+              </p>
+              <div className="ctas">
+                <button className="btn solid lg" onClick={onOrder}>
+                  Order Now
+                  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </button>
+                <button className="btn outline lg" onClick={onMenu}>View Menu</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== MARQUEE ==============
+    function Marquee({ phrases, variant = 'brick' }) {
+      const list = [...phrases, ...phrases];
+      return (
+        <div className={`marquee ${variant === 'cream' ? 'cream' : ''}`}>
+          <div className="track">
+            {list.map((p, i) => (
+              <React.Fragment key={i}>
+                <span>{p}</span>
+                <span className="dot" aria-hidden="true"></span>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // ============== MENU ==============
+    const MENU = [
+      { name: 'Dum Biryani', price: 170, desc: 'Slow-cooked over coals, sealed with dough. The classic that started it all.', sticker: 'sticker-dum-special.svg' },
+      { name: 'Fry Biryani', price: 190, desc: 'Wok-tossed, smoky, with a crisp edge. For when you want bold.', sticker: null },
+      { name: 'Mix Biryani', price: 200, desc: "The best of both worlds — dum's depth, fry's fire. Hostel favourite.", sticker: 'sticker-hostel-fav.svg' },
+    ];
+
+    function MenuCard({ item, onClick }) {
+      const slug = item.name.toLowerCase().replace(/\s+/g, '-');
+      return (
+        <div className="menu-card" onClick={onClick} data-comment-anchor={`menu-${slug.split('-')[0]}`}>
+          {item.sticker && (
+            <img className="sticker-overlay" src={`assets/stickers/${item.sticker}`} alt="" />
+          )}
+          <div className="photo">
+            <img
+              src={`assets/photos/${slug}.jpg`}
+              alt={item.name}
+              onError={(e) => { e.currentTarget.src = 'assets/biryani-placeholder.svg'; }}
+            />
+          </div>
+          <div className="row">
+            <div className="name">{item.name}</div>
+            <div className="price"><span className="rupee">₹</span>{item.price}</div>
+          </div>
+          <div className="desc">{item.desc}</div>
+        </div>
+      );
+    }
+
+    function Menu({ onAdd }) {
+      return (
+        <section id="menu" className="section" data-screen-label="Menu">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <span className="h-eyebrow">మన బిర్యానీ</span>
+                <h2>Mana Biryani.</h2>
+              </div>
+              <p className="blurb">
+                Three biryanis. Each one slow, each one ours. Tap a plate to add it to your WhatsApp order.
+              </p>
+            </div>
+            <div className="menu-grid">
+              {MENU.map(item => (
+                <MenuCard key={item.name} item={item} onClick={() => onAdd(item)} />
+              ))}
+            </div>
+            <div className="menu-note">More dishes coming soon. A poc a poc… slowly, slowly.</div>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== STORY ==============
+    function Story() {
+      return (
+        <section id="story" className="story section" data-screen-label="Story">
+          <div className="container">
+            <div className="grid">
+              <div className="img-frame">
+                <img
+                  src="assets/photos/story.jpg"
+                  alt="Top-down biryani on banana leaf"
+                  onError={(e) => { e.currentTarget.src = 'assets/biryani-placeholder.svg'; e.currentTarget.style.width = '90%'; e.currentTarget.style.height = 'auto'; }}
+                />
+                <svg className="frame-leaf" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M30 120 q40 -90 140 -90 q-10 110 -120 130 q-20 -10 -20 -40 z" />
+                  <path d="M40 130 q60 -70 130 -100" />
+                  <path d="M60 110 q15 -10 30 -30" />
+                  <path d="M75 95 q15 -10 30 -30" />
+                  <path d="M90 80 q15 -10 30 -30" />
+                </svg>
+              </div>
+              <div>
+                <span style={{ fontFamily: 'var(--font-telugu)', fontWeight: 700, color: 'var(--brick)', fontSize: 22, display: 'block', marginBottom: 10 }}>మన కథ</span>
+                <h2>From amma's kitchen — to your hostel door.</h2>
+                <div className="body">
+                  <p>
+                    Sindhu started on a coastal stretch of Andhra, in a kitchen where the
+                    rice was washed three times and the dough on the pot was sealed by hand.
+                    A recipe handed down, never written.
+                  </p>
+                  <p>
+                    Today we cook the same way in Mandadam — coal, dum, patience —
+                    and carry it the last mile to students far from home. No app.
+                    No queue. Just one number, one neighbourhood, one plate at a time.
+                  </p>
+                  <div className="sig">— from our dum to your dorm.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== WHY ==============
+    const REASONS = [
+      { ic: 'wheat.svg',   lbl: 'Aged basmati',     desc: 'Long-grain, perfumed, never broken.' },
+      { ic: 'flame.svg',   lbl: 'Slow-cooked dum',  desc: 'Coals and patience. Sealed with dough.' },
+      { ic: 'scooter.svg', lbl: '30-min to VIT-AP', desc: 'Hot to the hostel door, every time.' },
+      { ic: 'rupee.svg',   lbl: 'Hostel pricing',   desc: 'Built around what a student can spend.' },
+    ];
+
+    function Why() {
+      return (
+        <section className="section tight" data-screen-label="Why">
+          <div className="container">
+            <div className="section-head" style={{ marginBottom: 8 }}>
+              <div>
+                <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}>Why Sindhu.</h2>
+              </div>
+            </div>
+            <div className="why-grid">
+              {REASONS.map(r => (
+                <div className="why-tile" key={r.lbl}>
+                  <img className="ic" src={`assets/icons/${r.ic}`} alt="" />
+                  <div className="lbl">{r.lbl}</div>
+                  <div className="desc">{r.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== DELIVERY ZONE ==============
+    function DeliveryZone() {
+      return (
+        <section id="delivery" className="delivery section" data-screen-label="Delivery">
+          <div className="container">
+            <div className="grid">
+              <div className="map-card">
+                <img src="assets/map-delivery-zone.svg" alt="Delivery map of Mandadam and VIT-AP" />
+              </div>
+              <div>
+                <span className="h-eyebrow" style={{ fontFamily: 'var(--font-telugu)', color: 'var(--brick)', fontSize: 22, display: 'block', marginBottom: 10, fontWeight: 700 }}>డెలివరీ జోన్</span>
+                <h2>We deliver here — only here.</h2>
+                <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--fg-soft)' }}>
+                  Mandadam village and the VIT-AP University hostels. 522237. That's it.
+                  We like keeping it close, like family — and it means your biryani
+                  shows up hot, not lukewarm.
+                </p>
+                <div className="meta">
+                  <div className="meta-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s-7-8-7-13a7 7 0 1 1 14 0c0 5-7 13-7 13z" />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    <span>Mandadam, Amaravathi, Andhra Pradesh — 522237</span>
+                  </div>
+                  <div className="meta-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v5l3 2" />
+                    </svg>
+                    <span>Kitchen 11:00 — 22:30 · Delivery 12:00 — 22:00 · Daily</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== CTA BAND ==============
+    function CTABand({ onOrder }) {
+      return (
+        <section className="cta-band" data-screen-label="CTA">
+          <svg className="corner tl" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <ellipse cx="40" cy="20" rx="22" ry="9" />
+            <line x1="40" y1="13" x2="40" y2="27" strokeDasharray="2 4" />
+          </svg>
+          <svg className="corner br" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 60 q4 -28 28 -34 q14 -2 18 8 q2 8 -8 12 q-22 6 -28 22 q-6 4 -10 -8 z" />
+            <path d="M58 26 q4 -8 12 -10" />
+          </svg>
+          <div className="container">
+            <h2>Hungry? Order in 60 seconds.</h2>
+            <button className="btn dark lg" onClick={onOrder}>
+              WhatsApp Us
+              <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </section>
+      );
+    }
+
+    // ============== WHATSAPP MODAL ==============
+    function WhatsAppModal({ items, onClose }) {
+      const total = items.reduce((s, i) => s + i.price, 0);
+      const list = items.map(i => `• ${i.name} — ₹${i.price}`).join('\n');
+      const draft =
+`Sindhu, hi 👋
+${list || '• (no items yet)'}
+
+Total: ₹${total}
+Deliver to: VIT-AP Hostel — Block ___
+Name:`;
+
+      const openWhatsApp = () => {
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(draft)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      };
+
+      return (
+        <div className="modal-back" onClick={onClose}>
+          <div className="modal" onClick={e => e.stopPropagation()}>
+            <button className="close" onClick={onClose} aria-label="close">×</button>
+            <h3>Your WhatsApp draft</h3>
+            <p style={{ color: 'var(--fg-soft)', margin: 0, fontSize: 15 }}>
+              Tap send and we'll cook it up. No app, no fuss.
+            </p>
+            <div className="draft">{draft}</div>
+            <button className="btn solid send" onClick={openWhatsApp}>
+              Open WhatsApp
+              <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // ============== FOOTER ==============
+    function Footer() {
+      const waHref = `https://wa.me/${WHATSAPP_NUMBER}`;
+      const filterStyle = { width: 22, height: 22, filter: 'invert(95%) sepia(11%) saturate(388%) hue-rotate(348deg) brightness(102%) contrast(94%)' };
+      return (
+        <footer data-screen-label="Footer">
+          <div className="container">
+            <div className="grid">
+              <div>
+                <img src="assets/logo.svg" alt="Sindhu" className="logo" />
+                <div className="tag">Biryani, the Sindhu way. From our dum to your dorm.</div>
+              </div>
+              <div>
+                <h4>Visit</h4>
+                <ul>
+                  <li>Mandadam,</li>
+                  <li>Amaravathi,</li>
+                  <li>Andhra Pradesh —</li>
+                  <li>522237</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Hours</h4>
+                <ul>
+                  <li>Kitchen 11:00 — 22:30</li>
+                  <li>Delivery 12:00 — 22:00</li>
+                  <li>Daily, no off-days</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Reach us</h4>
+                <ul>
+                  <li><a href={`tel:${PHONE_TEL}`}>+91 73960 18423</a></li>
+                  <li><a href={waHref} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                  <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">@sindhu.mandadam</a></li>
+                </ul>
+                <div className="socials">
+                  <a href={waHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="" style={filterStyle} /></a>
+                  <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" style={filterStyle} /></a>
+                  <a href={`tel:${PHONE_TEL}`} aria-label="Call"><img src="assets/icons/phone.svg" alt="" style={filterStyle} /></a>
+                </div>
+              </div>
+            </div>
+            <div className="legal">
+              <span>© Sindhu 2026 — Made with love in Mandadam.</span>
+              <span>Biryani, bagundi.</span>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    // ============== APP ==============
+    function App() {
+      const [cart, setCart] = React.useState([]);
+      const [modalOpen, setModalOpen] = React.useState(false);
+
+      const addItem = (item) => {
+        setCart(c => [...c, item]);
+        setModalOpen(true);
+      };
+      const openOrder = () => setModalOpen(true);
+      const scrollMenu = () => {
+        const el = document.getElementById('menu');
+        if (el) window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
+      };
+
+      return (
+        <>
+          <Header onOrder={openOrder} />
+          <Hero onOrder={openOrder} onMenu={scrollMenu} />
+          <Marquee variant="brick" phrases={['FRESH DUM', 'SLOW COOKED', 'SOUL SERVED', 'CHALA BAGUNDI']} />
+          <Menu onAdd={addItem} />
+          <Story />
+          <Marquee variant="cream" phrases={['AMMA\u2019S RECIPE', 'COAL FIRED', 'BANANA LEAF', 'BAGUNDI?']} />
+          <Why />
+          <DeliveryZone />
+          <CTABand onOrder={openOrder} />
+          <Footer />
+          {modalOpen && <WhatsAppModal items={cart} onClose={() => setModalOpen(false)} />}
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
