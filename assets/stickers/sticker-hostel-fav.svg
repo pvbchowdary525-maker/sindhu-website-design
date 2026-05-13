@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  
+  <defs>
+    <path id="circle-text-hf" d="M 100,100 m -76,0 a 76,76 0 1,1 152,0 a 76,76 0 1,1 -152,0"></path>
+  </defs>
+  <circle cx="100" cy="100" r="86" fill="#D63384"></circle>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#F8F1E4" stroke-width="2" stroke-dasharray="3 6"></circle>
+  <text font-family="Fraunces, Georgia, serif" font-weight="800" font-size="22" fill="#F8F1E4" letter-spacing="3">
+    <textPath href="#circle-text-hf" startOffset="0">HOSTEL FAV • HOSTEL FAV • HOSTEL FAV • </textPath>
+  </text>
+  
+  <text x="100" y="96" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="34" fill="#F8F1E4">HOSTEL</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="34" fill="#F8F1E4">FAV</text>
+</svg>

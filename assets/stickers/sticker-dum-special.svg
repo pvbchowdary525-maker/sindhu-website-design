@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <path id="circle-text-ds" d="M 100,100 m -76,0 a 76,76 0 1,1 152,0 a 76,76 0 1,1 -152,0"></path>
+  </defs>
+  <circle cx="100" cy="100" r="86" fill="#E8763A"></circle>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#2A1E17" stroke-width="2" stroke-dasharray="3 6"></circle>
+  <text font-family="Fraunces, Georgia, serif" font-weight="800" font-size="20" fill="#2A1E17" letter-spacing="3">
+    <textPath href="#circle-text-ds" startOffset="0">DUM SPECIAL • DUM SPECIAL • DUM SPECIAL • </textPath>
+  </text>
+  <text x="100" y="96" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="32" fill="#2A1E17">DUM</text>
+  <text x="100" y="128" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="28" fill="#2A1E17">SPECIAL</text>
+</svg>

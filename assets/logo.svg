@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  
+  <text x="120" y="26" text-anchor="middle" font-family="&#39;Noto Serif Telugu&#39;, serif" font-size="20" font-weight="700" fill="#2A1E17">సింధు</text>
+  <text x="120" y="68" text-anchor="middle" font-family="Fraunces, &#39;Recoleta&#39;, Georgia, serif" font-size="42" font-weight="800" letter-spacing="-1" fill="#2A1E17">Sindhu</text>
+  
+  <path d="M108 76 q12 -6 24 0" stroke="#E8763A" stroke-width="2" stroke-linecap="round"></path>
+  <circle cx="120" cy="74" r="1.5" fill="#E8763A"></circle>
+</svg>

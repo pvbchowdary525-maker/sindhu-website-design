@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none" stroke="#2A1E17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  
+  <path d="M20 30 q-2 80 0 140 q150 -4 280 0 q150 -4 280 0 q4 -80 0 -140 q-150 4 -280 0 q-150 4 -280 0 z"></path>
+  
+  <path d="M10 90 q120 30 240 0 q120 -30 240 0 q60 16 110 -6" stroke="#7BA05B" stroke-width="3" stroke-dasharray="6 4"></path>
+  
+  <path d="M120 30 q12 80 -4 140" stroke-dasharray="4 6"></path>
+  <path d="M380 30 q-12 80 4 140" stroke-dasharray="4 6"></path>
+  <path d="M20 130 q300 -8 560 0" stroke-dasharray="4 6"></path>
+  
+  <circle cx="200" cy="60" r="3" fill="#7BA05B" stroke="none"></circle>
+  <circle cx="240" cy="50" r="3" fill="#7BA05B" stroke="none"></circle>
+  <circle cx="450" cy="160" r="3" fill="#7BA05B" stroke="none"></circle>
+  <circle cx="490" cy="170" r="3" fill="#7BA05B" stroke="none"></circle>
+  
+  <circle cx="180" cy="110" r="6" fill="#E8763A" stroke="#2A1E17" stroke-width="2"></circle>
+  <text x="180" y="138" text-anchor="middle" font-family="Caveat, cursive" font-size="22" fill="#2A1E17" stroke="none">Mandadam</text>
+  
+  <path d="M440 80 q-16 -20 -16 -32 q0 -16 16 -16 q16 0 16 16 q0 12 -16 32 z" fill="#E8763A" stroke="#2A1E17" stroke-width="2"></path>
+  <circle cx="440" cy="48" r="5" fill="#F8F1E4" stroke="none"></circle>
+  <text x="440" y="108" text-anchor="middle" font-family="Caveat, cursive" font-size="22" fill="#2A1E17" stroke="none">VIT-AP</text>
+  
+  <g transform="translate(540 50)">
+    <circle r="14"></circle>
+    <path d="M0 -10 l3 6 l-3 -2 l-3 2 z" fill="#2A1E17"></path>
+    <text y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" stroke="none" fill="#2A1E17">N</text>
+  </g>
+  
+  <text x="300" y="186" text-anchor="middle" font-family="Caveat, cursive" font-size="20" stroke="none" fill="#A8341F">522237 — that&#39;s all we serve.</text>
+</svg>

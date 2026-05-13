@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="sindhu">
+<head>
+<meta charset="utf-8">
+<title>Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; }
+  body { padding: 28px 24px 24px; background: var(--cream); color: var(--espresso); font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: end; }
+  .tile { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .card { width: 110px; height: 90px; border-radius: 16px; background: var(--cream); }
+  .label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-soft); text-align: center; line-height: 1.5; }
+  .label b { color: var(--espresso); font-weight: 600; display: block; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="tile"><div class="card" style="box-shadow: var(--shadow-soft)"></div><div class="label"><b>--shadow-soft</b>card rest</div></div>
+    <div class="tile"><div class="card" style="box-shadow: var(--shadow-lift)"></div><div class="label"><b>--shadow-lift</b>card hover</div></div>
+    <div class="tile"><div class="card" style="box-shadow: var(--shadow-press)"></div><div class="label"><b>--shadow-press</b>button press</div></div>
+    <div class="tile"><div class="card" style="box-shadow: var(--shadow-sticker); background: var(--magenta)"></div><div class="label"><b>--shadow-sticker</b>stickers</div></div>
+  </div>
+</body>
+</html>

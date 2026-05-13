@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M70 30 q-6 -10 4 -20 q10 -10 -2 -22"></path>
+  <path d="M100 30 q-6 -12 4 -22 q8 -10 -2 -20"></path>
+  <path d="M130 30 q-6 -10 4 -20 q10 -10 -2 -22"></path>
+  
+  <circle cx="100" cy="60" r="6"></circle>
+  <line x1="100" y1="66" x2="100" y2="78"></line>
+  
+  <path d="M50 78 q50 -16 100 0"></path>
+  <line x1="48" y1="78" x2="152" y2="78"></line>
+  
+  <path d="M52 80 q-2 50 14 80 q34 14 68 0 q16 -30 14 -80"></path>
+  
+  <path d="M50 92 q-12 4 -10 18"></path>
+  <path d="M150 92 q12 4 10 18"></path>
+  
+  <line x1="62" y1="120" x2="138" y2="120" stroke-dasharray="4 6"></line>
+</svg>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="sindhu">
+<head>
+<meta charset="utf-8">
+<title>Chip & tag</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; }
+  body { padding: 28px 24px; background: var(--cream); color: var(--espresso); font-family: var(--font-body); display: flex; flex-direction: column; gap: 16px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; line-height: 1; }
+  .chip.outline { background: transparent; box-shadow: inset 0 0 0 1.5px var(--espresso); color: var(--espresso); }
+  .chip.filled { background: var(--espresso); color: var(--cream); }
+  .chip.saffron { background: var(--saffron); color: var(--espresso); }
+  .chip.mint { background: var(--mint); color: var(--cream); }
+  .chip.cream { background: var(--cream-warm); color: var(--espresso); }
+  .ico { width: 14px; height: 14px; color: currentColor; }
+  .meta { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-soft); }
+</style>
+</head>
+<body>
+  <div class="meta">Chips · all pill, never rectangle</div>
+  <div class="row">
+    <span class="chip outline">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-8-7-13a7 7 0 1 1 14 0c0 5-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Delivering to Mandadam & VIT-AP
+    </span>
+    <span class="chip filled">Dum special</span>
+    <span class="chip saffron">Order now</span>
+    <span class="chip mint">Vegetarian</span>
+    <span class="chip cream">11:00 — 22:30</span>
+  </div>
+</body>
+</html>

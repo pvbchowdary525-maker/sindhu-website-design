@@ -1,0 +1,256 @@
+/* =========================================================
+   Sindhu Design System — Color + Type Tokens
+   Import this once at the top of any HTML file.
+
+   <link rel="stylesheet" href="colors_and_type.css">
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;700&family=Noto+Serif+Telugu:wght@500;700&display=swap');
+
+:root {
+  /* ---------- Color: palette ---------- */
+  --saffron:  #E8763A;
+  --saffron-deep: #C95F26;       /* hover-darken of saffron */
+  --brick:    #A8341F;
+  --brick-deep: #842718;         /* hover-darken of brick */
+  --cream:    #F8F1E4;
+  --cream-warm: #EFE4CE;         /* secondary cream tint, cards on cream */
+  --espresso: #2A1E17;
+  --espresso-soft: #4A3A2F;
+  --mint:     #7BA05B;
+  --mint-deep: #5F7E45;
+  --magenta:  #D63384;
+  --magenta-deep: #B12A6E;
+
+  /* Subtle utility tints */
+  --espresso-12: rgba(42, 30, 23, 0.12);
+  --espresso-08: rgba(42, 30, 23, 0.08);
+  --espresso-60: rgba(42, 30, 23, 0.60);
+  --cream-30: rgba(248, 241, 228, 0.30);
+
+  /* ---------- Color: semantic ---------- */
+  --bg:          var(--cream);
+  --bg-alt:      var(--saffron);
+  --bg-band:     var(--brick);
+  --bg-footer:   var(--espresso);
+
+  --fg:          var(--espresso);
+  --fg-soft:     var(--espresso-soft);
+  --fg-onDark:   var(--cream);
+  --fg-onSaffron: var(--espresso);   /* keep dark on saffron, brand decision */
+  --fg-onBrick:  var(--cream);
+
+  --accent:      var(--saffron);
+  --accent-2:    var(--brick);
+  --accent-fresh: var(--mint);
+  --accent-pop:  var(--magenta);
+
+  --border:      var(--espresso);
+  --border-hair: var(--espresso-12);
+
+  /* ---------- Typography: families ---------- */
+  --font-display:     'Fraunces', 'Recoleta', 'Editorial New', Georgia, serif;
+  --font-body:        'Inter', 'General Sans', 'Söhne', system-ui, -apple-system, sans-serif;
+  --font-script:      'Caveat', 'Homemade Apple', cursive;
+  --font-telugu:      'Noto Serif Telugu', 'Fraunces', serif;
+
+  /* ---------- Typography: size scale ---------- */
+  --fs-display-xl:    clamp(64px, 12vw, 160px);   /* hero kill-shot */
+  --fs-display-lg:    clamp(48px, 8vw, 104px);    /* section banner */
+  --fs-display-md:    clamp(36px, 5vw, 64px);     /* section header */
+  --fs-h1:            clamp(40px, 5vw, 72px);
+  --fs-h2:            clamp(28px, 3.5vw, 44px);
+  --fs-h3:            clamp(22px, 2.4vw, 28px);
+  --fs-h4:            18px;
+  --fs-body-lg:       19px;
+  --fs-body:          17px;
+  --fs-body-sm:       15px;
+  --fs-caption:       13px;
+  --fs-marquee:       clamp(40px, 6vw, 88px);
+  --fs-price:         clamp(40px, 5vw, 64px);
+  --fs-script:        clamp(22px, 2.4vw, 30px);
+
+  /* ---------- Typography: line + tracking ---------- */
+  --lh-tight:    1.02;
+  --lh-snug:     1.15;
+  --lh-body:     1.55;
+  --lh-loose:    1.7;
+  --tr-caps:     0.04em;
+  --tr-display:  -0.015em;
+  --tr-marquee:  -0.005em;
+
+  /* ---------- Radii ---------- */
+  --radius-sm:   8px;
+  --radius-md:   20px;
+  --radius-lg:   36px;
+  --radius-pill: 999px;
+  --radius-blob: 62% 38% 56% 44% / 50% 60% 40% 50%;
+
+  /* ---------- Shadows ---------- */
+  --shadow-soft:    0 4px 16px rgba(42, 30, 23, 0.08);
+  --shadow-lift:    0 12px 32px rgba(42, 30, 23, 0.16);
+  --shadow-press:   0 2px 8px rgba(42, 30, 23, 0.12);
+  --shadow-sticker: 0 6px 18px rgba(168, 52, 31, 0.22);
+
+  /* ---------- Motion ---------- */
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-state:    cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-hover:     180ms;
+  --dur-state:     280ms;
+  --dur-reveal:    720ms;
+  --dur-marquee:   40s;
+
+  /* ---------- Spacing ---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  --section-y-desktop: 120px;
+  --section-y-mobile:  64px;
+  --container-max:     1280px;
+  --container-pad:     max(5vw, 24px);
+}
+
+/* =========================================================
+   Semantic resets — opt-in by adding `.sindhu` to <html> or
+   any container that should pick up brand defaults.
+   ========================================================= */
+.sindhu,
+.sindhu * {
+  box-sizing: border-box;
+}
+
+.sindhu {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- Headings ----- */
+.sindhu h1, .sindhu .h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  margin: 0;
+}
+.sindhu h2, .sindhu .h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+  margin: 0;
+}
+.sindhu h3, .sindhu .h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+.sindhu h4, .sindhu .h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  margin: 0;
+}
+
+/* ----- Display / banner ----- */
+.sindhu .display-xl {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-display-xl);
+  line-height: 0.95;
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.sindhu .display-lg {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display-lg);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+}
+.sindhu .display-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-md);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+}
+
+/* ----- Body ----- */
+.sindhu p, .sindhu .body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+  margin: 0;
+}
+.sindhu .body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+}
+.sindhu .body-sm { font-size: var(--fs-body-sm); }
+.sindhu .caption {
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+/* ----- Specialised ----- */
+.sindhu .script {
+  font-family: var(--font-script);
+  font-weight: 500;
+  font-size: var(--fs-script);
+  line-height: 1.2;
+}
+.sindhu .telugu {
+  font-family: var(--font-telugu);
+  font-weight: 700;
+}
+.sindhu .product-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.sindhu .price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-price);
+  line-height: 1;
+}
+.sindhu .marquee-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-marquee);
+  letter-spacing: var(--tr-marquee);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ----- Links ----- */
+.sindhu a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: text-decoration-thickness var(--dur-hover) var(--ease-state);
+}
+.sindhu a:hover { text-decoration-thickness: 3px; }

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="sindhu">
+<head>
+<meta charset="utf-8">
+<title>Palette · Primary</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; }
+  body { padding: 20px 24px; background: var(--cream); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .chip { border-radius: 14px; padding: 14px 16px; min-height: 110px; display: flex; flex-direction: column; justify-content: space-between; font-family: var(--font-body); }
+  .chip .name { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
+  .chip .hex  { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
+  .chip .role { font-size: 13px; opacity: 0.85; }
+  .on-dark { color: var(--cream); }
+  .on-light { color: var(--espresso); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="chip on-light" style="background: var(--saffron)">
+      <div>
+        <div class="name">Saffron</div>
+        <div class="role">Hero color · primary CTA</div>
+      </div>
+      <div class="hex">#E8763A</div>
+    </div>
+    <div class="chip on-dark" style="background: var(--brick)">
+      <div>
+        <div class="name">Brick</div>
+        <div class="role">Marquee · accents · saffron hover</div>
+      </div>
+      <div class="hex">#A8341F</div>
+    </div>
+    <div class="chip on-dark" style="background: var(--espresso)">
+      <div>
+        <div class="name">Espresso</div>
+        <div class="role">Body text · footer · dark surfaces</div>
+      </div>
+      <div class="hex">#2A1E17</div>
+    </div>
+  </div>
+</body>
+</html>
