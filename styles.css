@@ -98,10 +98,6 @@ body {
   font-family: var(--font-telugu); font-weight: 700; font-size: 22px;
   color: var(--brick); margin-bottom: 12px; display: block;
 }
-@media (max-width: 768px) {
-  .hero .corner-pot { width: 160px; height: 160px; top: 12px; right: -30px; }
-  .hero .sticker { width: 92px; height: 92px; right: 18px; bottom: 30px; }
-}
 
 /* ===== Marquee ===== */
 .marquee {
@@ -273,3 +269,53 @@ footer .legal { border-top: 1px solid rgba(248, 241, 228, 0.15); padding-top: 24
 .modal .close { position: absolute; top: 18px; right: 18px; background: none; border: none; cursor: pointer; font-size: 24px; color: var(--fg-soft); }
 .modal .draft { background: var(--cream-warm); border-radius: var(--radius-sm); padding: 16px; margin: 18px 0 24px; font-size: 14px; line-height: 1.5; white-space: pre-wrap; font-family: ui-monospace, monospace; color: var(--espresso); }
 .modal .send { width: 100%; }
+
+/* =========================================================
+   MOBILE FIXES (≤ 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  /* --- Header: hide nav links, keep logo + Order button --- */
+  .site-header { padding-top: 14px; }
+  .site-header .logo { height: 44px; }
+  .site-header .nav a { display: none; }              /* hide MENU / OUR STORY / DELIVERY links */
+  .site-header .nav { gap: 0; }
+  .site-header .nav .btn.sm { padding: 10px 16px; font-size: 12px; }
+
+  /* --- Hero: move content above doodles --- */
+  .hero { padding-bottom: 32px; }
+  .hero .container > div { padding-top: 24px !important; }
+  .hero .container { position: relative; z-index: 2; }
+
+  /* --- Pot doodle: smaller, push to top-right corner, behind text --- */
+  .hero .corner-pot {
+    width: 130px; height: 130px;
+    top: 8px; right: -36px;
+    opacity: 0.55;                                    /* fade so it reads as background */
+    z-index: 0;
+  }
+
+  /* --- Sticker: move below the buttons so it does NOT overlap CTAs --- */
+  .hero .sticker {
+    width: 96px; height: 96px;
+    right: 16px;
+    bottom: -36px;                                    /* sit below hero, peek into next section */
+    z-index: 3;
+  }
+
+  /* --- Hero typography breathe room on tiny screens --- */
+  .hero h1 { font-size: clamp(56px, 14vw, 96px); margin-bottom: 20px; }
+  .hero .sub { font-size: 16px; margin-bottom: 28px; }
+  .hero .chip { font-size: 13px; padding: 8px 14px; margin-bottom: 20px; }
+  .hero .ctas { flex-direction: column; align-items: stretch; }
+  .hero .ctas .btn { justify-content: center; width: 100%; }
+
+  /* --- Button sizing on mobile --- */
+  .btn.lg { padding: 18px 28px; font-size: 15px; }
+}
+
+@media (max-width: 380px) {
+  /* very small phones */
+  .hero h1 { font-size: 52px; }
+  .hero .corner-pot { width: 110px; height: 110px; right: -40px; }
+  .hero .sticker { width: 80px; height: 80px; }
+}
