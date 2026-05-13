@@ -277,7 +277,6 @@ footer .legal { border-top: 1px solid rgba(248, 241, 228, 0.15); padding-top: 24
   /* --- Header: hide nav links, keep logo + Order button --- */
   .site-header { padding-top: 14px; }
   .site-header .logo { height: 44px; }
-  .site-header .nav a { display: none; }              /* hide MENU / OUR STORY / DELIVERY links */
   .site-header .nav { gap: 0; }
   .site-header .nav .btn.sm { padding: 10px 16px; font-size: 12px; }
 
@@ -318,4 +317,39 @@ footer .legal { border-top: 1px solid rgba(248, 241, 228, 0.15); padding-top: 24
   .hero h1 { font-size: 52px; }
   .hero .corner-pot { width: 110px; height: 110px; right: -40px; }
   .hero .sticker { width: 80px; height: 80px; }
+}
+
+/* ===== Hamburger + Mobile Drawer ===== */
+.desktop-nav { display: flex; }
+.mobile-nav-row { display: none; align-items: center; gap: 12px; }
+
+.hamburger {
+  background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; padding: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--espresso);
+}
+.hamburger svg { width: 26px; height: 26px; }
+
+.mobile-drawer {
+  background: var(--cream);
+  border-top: 1.5px solid rgba(42,30,23,0.1);
+  display: flex; flex-direction: column;
+  padding: 8px 0 16px;
+}
+.mobile-drawer a {
+  font-size: 18px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--espresso); padding: 14px 24px;
+  border-bottom: 1px solid rgba(42,30,23,0.07);
+  transition: background 150ms;
+}
+.mobile-drawer a:last-child { border-bottom: none; }
+.mobile-drawer a:active { background: var(--cream-warm); }
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .mobile-nav-row { display: flex; }
+  /* undo old rule that hid nav links — no longer needed */
+  .site-header .nav a { display: flex; }
 }
